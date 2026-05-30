@@ -15,14 +15,14 @@
 
       <div class="relative z-10">
         <div class="text-center mb-10">
-          <h2
-            class="text-brand-gold text-sm uppercase tracking-[0.2em] font-bold mb-4"
+          <p
+            class="text-brand-gold text-sm uppercase tracking-[0.2em] font-bold font-serif mb-4"
           >
             Réserver une table
-          </h2>
-          <h3 class="text-3xl md:text-5xl font-serif text-brand-cream">
+          </p>
+          <h2 class="text-3xl md:text-5xl font-serif text-brand-cream">
             Votre moment au Vieux Comptoir
-          </h3>
+          </h2>
         </div>
 
         <form class="space-y-6" id="reservation-form">
@@ -36,6 +36,8 @@
               <input
                 type="date"
                 id="date"
+                name="date"
+                required
                 class="w-full bg-brand-dark/50 border border-brand-gold/30 rounded-sm px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-gold transition-colors font-sans"
               />
             </div>
@@ -48,6 +50,8 @@
               >
               <select
                 id="time"
+                name="time"
+                required
                 class="w-full bg-brand-dark/50 border border-brand-gold/30 rounded-sm px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-gold transition-colors appearance-none font-sans"
               >
                 <option value="">Sélectionnez une heure</option>
@@ -67,6 +71,8 @@
               >
               <select
                 id="guests"
+                name="guests"
+                required
                 class="w-full bg-brand-dark/50 border border-brand-gold/30 rounded-sm px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-gold transition-colors appearance-none font-sans"
               >
                 <option value="1">1 Personne</option>
@@ -88,6 +94,9 @@
               <input
                 type="text"
                 id="name"
+                name="name"
+                required
+                autocomplete="name"
                 placeholder="Votre nom"
                 class="w-full bg-brand-dark/50 border border-brand-gold/30 rounded-sm px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-gold transition-colors font-sans"
               />
