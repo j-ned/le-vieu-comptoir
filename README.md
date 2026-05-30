@@ -9,9 +9,9 @@
 [![Astro](https://img.shields.io/badge/Astro-5-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-deployed-222?style=for-the-badge&logo=github)](https://j-ned.github.io/le-vieu-comptoir/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-deployed-222?style=for-the-badge&logo=github)](https://djoudj-dev.github.io/le-vieu-comptoir/)
 
-[**🔗 Site live**](https://j-ned.github.io/le-vieu-comptoir/) · [**📸 Captures**](#-captures-décran) · [**⚡ Performance**](#-performance)
+[**🔗 Site live**](https://djoudj-dev.github.io/le-vieu-comptoir/) · [**📸 Captures**](#-captures-décran) · [**⚡ Performance**](#-performance)
 
 ![Le Vieux Comptoir — Hero](./screen/hero-dark.png)
 
@@ -47,11 +47,11 @@ Brasserie parisienne historique (**fondée en 1892**) — besoin d'une **vitrine
 
 Couleurs évoquant le bar à vin, les dorures d'un ancien comptoir, et la chaleur d'un intérieur Belle Époque.
 
-| Couleur | Usage |
-|---------|-------|
-| 🟥 **Bordeaux** `#8B1E2C` | CTAs, accents, prix |
-| 🟨 **Or** `#D4A574` | Titres de section, séparateurs |
-| 🟪 **Crème** `#FFF8F0` | Backgrounds chauds |
+| Couleur                   | Usage                          |
+| ------------------------- | ------------------------------ |
+| 🟥 **Bordeaux** `#600714` | CTAs, accents, prix            |
+| 🟨 **Or** `#D4AF37`       | Titres de section, séparateurs |
+| 🟪 **Crème** `#FDFBF7`    | Backgrounds chauds             |
 
 ### Typographie
 
@@ -70,18 +70,18 @@ Couleurs évoquant le bar à vin, les dorures d'un ancien comptoir, et la chaleu
 
 ### Objectifs atteints
 
-| Metric | Score |
-|--------|-------|
-| **Performance** | 🎯 100 / 100 |
-| **Accessibilité** | 🎯 100 / 100 |
+| Metric             | Score        |
+| ------------------ | ------------ |
+| **Performance**    | 🎯 100 / 100 |
+| **Accessibilité**  | 🎯 100 / 100 |
 | **Best Practices** | 🎯 100 / 100 |
-| **SEO** | 🎯 100 / 100 |
+| **SEO**            | 🎯 100 / 100 |
 
 ### Comment on y arrive
 
 1. **Astro Islands** — seuls les composants interactifs sont hydratés (ici : quasiment aucun)
 2. **Zero JS externe** — rendu HTML/CSS pur, pas de Framework côté client
-3. **Images WebP** — conversion automatique via `astro:assets`, compression optimale
+3. **Images AVIF** — conversion automatique via `astro:assets`, compression optimale
 4. **Fonts auto-hébergées** — `@fontsource-variable/*`, pas de Google Fonts
 5. **Preload critique** — hero image, fonts primaires
 6. **No CLS** — dimensions explicites sur toutes les images
@@ -128,12 +128,12 @@ JS exécuté         : 0 KB (!)
 ```
 le-vieux-comptoir/
 ├── src/
-│   ├── pages/             # routes (index, la-carte, fumoir, contact)
-│   ├── layouts/           # Layout principal avec SEO meta
-│   ├── components/        # Header, Footer, Hero, MenuCard…
-│   ├── assets/            # images sources (WebP auto-générées)
+│   ├── pages/             # index.astro (page unique, one-pager)
+│   ├── layouts/           # Layout principal avec SEO meta + Open Graph
+│   ├── components/        # Navbar, Hero, About, Menu, CigarLounge, Reservation, Reviews, Footer
+│   ├── assets/            # images sources (AVIF auto-générées au build)
 │   └── styles/            # global.css + theme Tailwind
-├── public/                # favicon, robots.txt
+├── public/                # favicon, og-image
 ├── astro.config.mjs       # config Astro + intégration Tailwind
 └── .github/workflows/     # CI/CD GitHub Pages
 ```
@@ -155,18 +155,18 @@ le-vieux-comptoir/
 ## 🚀 Installation
 
 ```bash
-git clone https://github.com/j-ned/le-vieu-comptoir.git
+git clone https://github.com/djoudj-dev/le-vieu-comptoir.git
 cd le-vieu-comptoir
-pnpm install
-pnpm dev
+npm install
+npm run dev
 # → http://localhost:4321
 ```
 
 ### Build production
 
 ```bash
-pnpm build
-pnpm preview
+npm run build
+npm run preview
 ```
 
 ### Déploiement automatique

@@ -2,7 +2,7 @@ name: Deploiment du vieux comptoir
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
