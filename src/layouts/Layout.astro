@@ -3,13 +3,32 @@ import '../styles/global.css';
 // Variable fonts for better performance (single file download instead of multiple weights)
 import '@fontsource-variable/playfair-display';
 import '@fontsource-variable/inter';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Path to the social share image, relative to the site root. */
+  ogImage?: string;
+}
+
+const {
+  title = 'Le Vieux Comptoir | Brasserie Traditionnelle Parisienne',
+  description = "Découvrez Le Vieux Comptoir, l'authentique brasserie parisienne. Cuisine traditionnelle, ambiance historique, fumoir à cigares, et soirées d'exception.",
+  ogImage = 'og-image.jpg',
+}: Props = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = new URL(
+  `${import.meta.env.BASE_URL}/${ogImage}`,
+  Astro.site,
+);
 ---
 
 <!doctype html>
 <html lang="fr" class="antialiased scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="icon"
       type="image/svg+xml"
@@ -17,11 +36,24 @@ import '@fontsource-variable/inter';
     />
     <link rel="icon" href={`${import.meta.env.BASE_URL}/favicon.ico`} />
     <meta name="generator" content={Astro.generator} />
-    <title>Le Vieux Comptoir | Brasserie Traditionnelle Parisienne</title>
-    <meta
-      name="description"
-      content="Découvrez Le Vieux Comptoir, l'authentique brasserie parisienne. Cuisine traditionnelle, ambiance historique, fumoir à cigares, et soirées d'exception."
-    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    {/* Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Le Vieux Comptoir" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+
+    {/* Twitter Card */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body
     class="bg-brand-cream text-brand-dark flex flex-col min-h-screen font-sans"
