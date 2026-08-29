@@ -9,7 +9,7 @@
 [![Astro](https://img.shields.io/badge/Astro-5-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-deployed-222?style=for-the-badge&logo=github)](https://djoudj-dev.github.io/le-vieu-comptoir/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-deployed-222?style=for-the-badge&logo=github)](https://j-ned.github.io/le-vieu-comptoir/)
 
 [**🔗 Site live**](https://j-ned.github.io/le-vieu-comptoir/) · [**📸 Captures**](#-captures-décran) · [**⚡ Performance**](#-performance)
 
@@ -155,7 +155,7 @@ le-vieux-comptoir/
 ## 🚀 Installation
 
 ```bash
-git clone https://github.com/djoudj-dev/le-vieu-comptoir.git
+git clone https://github.com/j-ned/le-vieu-comptoir.git
 cd le-vieu-comptoir
 npm install
 npm run dev
@@ -177,7 +177,7 @@ Chaque push sur `master` déclenche le workflow GitHub Actions → build Astro �
 
 <div align="center">
 
-**Développé par [Julien Nedellec](https://j-ned.dev)**
+**Développé par [Julien Nedellec](https://nedellec-julien.fr/)**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-j--ned.dev-4f46e5?style=for-the-badge)](https://j-ned.dev)
 [![GitHub](https://img.shields.io/badge/GitHub-j--ned-181717?style=for-the-badge&logo=github)](https://github.com/j-ned)
