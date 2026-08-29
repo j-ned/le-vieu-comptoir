@@ -6,7 +6,7 @@
 
 **Astro · Zéro JavaScript externe · Lighthouse 100 · Atmosphère intemporelle**
 
-[![Astro](https://img.shields.io/badge/Astro-5-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
+[![Astro](https://img.shields.io/badge/Astro-7-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-deployed-222?style=for-the-badge&logo=github)](https://j-ned.github.io/le-vieu-comptoir/)
@@ -100,7 +100,7 @@ JS exécuté         : 0 KB (!)
 
 ### Framework
 
-- **Astro 5** — SSG avec architecture islands
+- **Astro 7** — SSG avec architecture islands
 - **TypeScript 5** — strict mode
 - **TailwindCSS v4** — thème custom (bordeaux / or / crème)
 
