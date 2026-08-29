@@ -1,6 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import cigarBg from '../assets/images/cigar-lounge.png';
+
+const HIGHLIGHTS = [
+  'Cave à cigares avec humidificateur sur mesure',
+  'Sélection de cognacs centenaires et whiskies rares',
+  "Accès réservé, idéal pour vos rendez-vous d'affaires",
+];
 ---
 
 <section
@@ -9,7 +15,6 @@ import cigarBg from '../assets/images/cigar-lounge.png';
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      {/* Visual Content */}
       <div class="relative h-[500px] lg:h-[700px] order-2 lg:order-1">
         <div
           class="absolute inset-0 rounded-sm overflow-hidden shadow-2xl border border-brand-gold/20 z-10"
@@ -29,7 +34,6 @@ import cigarBg from '../assets/images/cigar-lounge.png';
         </div>
       </div>
 
-      {/* Text Content */}
       <div class="order-1 lg:order-2 space-y-8 pl-0 lg:pl-12">
         <div>
           <p
@@ -56,48 +60,26 @@ import cigarBg from '../assets/images/cigar-lounge.png';
             havanes et spiritueux d'exception.
           </p>
           <ul class="space-y-4">
-            <li class="flex items-start">
-              <svg
-                class="w-6 h-6 text-brand-gold mr-3 mt-1 shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Cave à cigares avec humidificateur sur mesure</span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                class="w-6 h-6 text-brand-gold mr-3 mt-1 shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Sélection de cognacs centenaires et whiskies rares</span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                class="w-6 h-6 text-brand-gold mr-3 mt-1 shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Accès réservé, idéal pour vos rendez-vous d'affaires</span>
-            </li>
+            {
+              HIGHLIGHTS.map((highlight) => (
+                <li class="flex items-start">
+                  <svg
+                    class="w-6 h-6 text-brand-gold mr-3 mt-1 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span>{highlight}</span>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
