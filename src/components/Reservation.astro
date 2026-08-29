@@ -1,13 +1,8 @@
----
-// Reservation component
----
-
 <section id="reservation" class="py-24 bg-brand-cream relative">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div
       class="bg-brand-dark-wood p-8 md:p-12 rounded-sm shadow-2xl border border-brand-gold/20 relative overflow-hidden"
     >
-      {/* Decorative inner border */}
       <div
         class="absolute inset-4 border border-brand-gold/10 rounded-sm pointer-events-none"
       >
@@ -121,7 +116,6 @@
   </div>
 </section>
 
-{/* Redirect Modal */}
 <div
   id="thefork-modal"
   class="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
@@ -180,24 +174,12 @@
 </div>
 
 <script>
-  // Script to handle the modal
-  const form = document.getElementById('reservation-form');
+  const form = document.querySelector<HTMLFormElement>('#reservation-form');
   const modal = document.getElementById('thefork-modal');
   const modalContent = document.getElementById('thefork-modal-content');
   const closeBtn = document.getElementById('close-modal-btn');
   const continueBtn = document.getElementById('continue-btn');
 
-  // Open modal on form submit instead of submitting
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (modal && modalContent) {
-      modal.classList.remove('opacity-0', 'pointer-events-none');
-      modalContent.classList.remove('scale-95');
-      modalContent.classList.add('scale-100');
-    }
-  });
-
-  // Close modal functions
   const closeModal = () => {
     if (modal && modalContent) {
       modal.classList.add('opacity-0', 'pointer-events-none');
@@ -206,11 +188,28 @@
     }
   };
 
-  closeBtn?.addEventListener('click', closeModal);
-  continueBtn?.addEventListener('click', closeModal); // closes our modal as it opens new tab
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (modal && modalContent) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+      }
+    });
+  }
 
-  // Close when clicking outside
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  if (continueBtn) {
+    continueBtn.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
 </script>

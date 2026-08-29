@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-// Variable fonts for better performance (single file download instead of multiple weights)
 import '@fontsource-variable/playfair-display';
 import '@fontsource-variable/inter';
 
@@ -40,7 +39,6 @@ const ogImageUrl = new URL(
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
-    {/* Open Graph */}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content="Le Vieux Comptoir" />
@@ -49,7 +47,6 @@ const ogImageUrl = new URL(
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImageUrl} />
 
-    {/* Twitter Card */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

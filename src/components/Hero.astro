@@ -6,7 +6,6 @@ import heroBg from '../assets/images/hero-bg.png';
 <section
   class="relative h-screen flex items-center justify-center overflow-hidden"
 >
-  {/* Background Image with Overlay */}
   <div class="absolute inset-0 w-full h-full">
     <Image
       src={heroBg}
@@ -24,7 +23,6 @@ import heroBg from '../assets/images/hero-bg.png';
     </div>
   </div>
 
-  {/* Content */}
   <div
     class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center mt-16"
   >
@@ -51,13 +49,13 @@ import heroBg from '../assets/images/hero-bg.png';
 
     <div class="flex flex-col sm:flex-row gap-4">
       <a
-        href="#reservation"
+        href={'#reservation'}
         class="bg-brand-bordeaux hover:bg-brand-bordeaux-light text-brand-cream px-8 py-4 rounded-sm transition-colors text-sm uppercase tracking-widest font-bold border border-brand-bordeaux-light shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200 focus:outline-none focus:ring-2 focus:ring-brand-cream focus:ring-offset-2 focus:ring-offset-brand-dark"
       >
         Réserver une table
       </a>
       <a
-        href="#menu"
+        href={'#menu'}
         class="bg-transparent hover:bg-brand-dark-wood/50 text-brand-cream border border-brand-gold px-8 py-4 rounded-sm transition-all text-sm uppercase tracking-widest font-bold backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand-gold"
       >
         Découvrir la carte
@@ -65,14 +63,13 @@ import heroBg from '../assets/images/hero-bg.png';
     </div>
   </div>
 
-  {/* Scroll Down Indicator */}
   <div
     class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
   >
     <a
-      href="#about"
+      href={'#about'}
       aria-label="Défiler vers la section à propos"
-      class="text-brand-gold opacity-100 hover:opacity-100 transition-opacity focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-full p-2"
+      class="text-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-full p-2"
     >
       <svg
         class="w-6 h-6"

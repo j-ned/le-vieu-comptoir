@@ -1,5 +1,10 @@
 ---
-// Navbar component
+const NAV_LINKS = [
+  { href: '#about', label: "L'Établissement" },
+  { href: '#menu', label: 'La Carte' },
+  { href: '#cigar-lounge', label: 'Le Fumoir' },
+  { href: '#contact', label: 'Contact' },
+];
 ---
 
 <header
@@ -17,37 +22,25 @@
         </a>
       </div>
 
-      {/* Desktop Menu */}
       <nav class="hidden md:flex space-x-8 items-center">
+        {
+          NAV_LINKS.map((link) => (
+            <a
+              href={link.href}
+              class="text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
+            >
+              {link.label}
+            </a>
+          ))
+        }
         <a
-          href="#about"
-          class="text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
-          >L'Établissement</a
-        >
-        <a
-          href="#menu"
-          class="text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
-          >La Carte</a
-        >
-        <a
-          href="#cigar-lounge"
-          class="text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
-          >Le Fumoir</a
-        >
-        <a
-          href="#contact"
-          class="text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
-          >Contact</a
-        >
-        <a
-          href="#reservation"
+          href={'#reservation'}
           class="bg-brand-bordeaux hover:bg-brand-bordeaux-light text-brand-cream px-6 py-2 rounded-sm transition-colors text-sm uppercase tracking-widest font-bold border border-brand-bordeaux-light"
         >
           Réserver
         </a>
       </nav>
 
-      {/* Mobile menu button */}
       <div class="md:hidden flex items-center">
         <button
           type="button"
@@ -87,33 +80,22 @@
       </div>
     </div>
 
-    {/* Mobile Menu Panel */}
     <nav
       id="mobile-menu"
       class="hidden md:hidden pb-6 space-y-1 border-t border-brand-gold/20"
     >
+      {
+        NAV_LINKS.map((link) => (
+          <a
+            href={link.href}
+            class="block px-2 py-3 text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
+          >
+            {link.label}
+          </a>
+        ))
+      }
       <a
-        href="#about"
-        class="block px-2 py-3 text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
-        >L'Établissement</a
-      >
-      <a
-        href="#menu"
-        class="block px-2 py-3 text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
-        >La Carte</a
-      >
-      <a
-        href="#cigar-lounge"
-        class="block px-2 py-3 text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
-        >Le Fumoir</a
-      >
-      <a
-        href="#contact"
-        class="block px-2 py-3 text-brand-cream hover:text-brand-gold transition-colors text-sm uppercase tracking-widest font-medium"
-        >Contact</a
-      >
-      <a
-        href="#reservation"
+        href={'#reservation'}
         class="block mt-2 bg-brand-bordeaux hover:bg-brand-bordeaux-light text-brand-cream px-6 py-3 rounded-sm transition-colors text-sm uppercase tracking-widest font-bold border border-brand-bordeaux-light text-center"
         >Réserver</a
       >
@@ -122,18 +104,14 @@
 </header>
 
 <script>
-  // Simple scroll effect for navbar
   window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      navbar?.classList.add('shadow-lg');
-    } else {
-      navbar?.classList.remove('shadow-lg');
-    }
+    navbar?.classList.toggle('shadow-lg', window.scrollY > 50);
   });
 
-  // Mobile menu toggle
-  const menuButton = document.getElementById('mobile-menu-button');
+  const menuButton = document.querySelector<HTMLButtonElement>(
+    '#mobile-menu-button',
+  );
   const mobileMenu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('mobile-menu-icon-open');
   const iconClose = document.getElementById('mobile-menu-icon-close');
@@ -149,12 +127,21 @@
     );
   };
 
-  menuButton?.addEventListener('click', () => {
+  const toggleMenu = () => {
     setMenu(mobileMenu?.classList.contains('hidden') ?? true);
-  });
+  };
 
-  // Close the menu when a link is tapped
-  mobileMenu?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => setMenu(false));
-  });
+  const closeMenu = () => {
+    setMenu(false);
+  };
+
+  if (menuButton) {
+    menuButton.addEventListener('click', toggleMenu);
+  }
+
+  document
+    .querySelectorAll<HTMLAnchorElement>('#mobile-menu a')
+    .forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
 </script>

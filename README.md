@@ -1,4 +1,4 @@
-<div align="center">
+<div style="text-align: center;">
 
 # 🍷 Le Vieux Comptoir
 
@@ -25,7 +25,7 @@
 - [🎨 Parti-pris design](#-parti-pris-design)
 - [⚡ Performance](#-performance)
 - [🧰 Stack technique](#-stack-technique)
-- [🏗️ Architecture](#️-architecture)
+- [🏗️ Architecture](#-architecture)
 - [📸 Captures d'écran](#-captures-décran)
 - [🚀 Installation](#-installation)
 
@@ -175,11 +175,11 @@ Chaque push sur `master` déclenche le workflow GitHub Actions → build Astro �
 
 ---
 
-<div align="center">
+<div style="text-align: center;">
 
 **Développé par [Julien Nedellec](https://nedellec-julien.fr/)**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-j--ned.dev-4f46e5?style=for-the-badge)](https://j-ned.dev)
+[![Portfolio](https://img.shields.io/badge/Portfolio-j--ned.dev-4f46e5?style=for-the-badge)](https://nedellec-julien.fr/)
 [![GitHub](https://img.shields.io/badge/GitHub-j--ned-181717?style=for-the-badge&logo=github)](https://github.com/j-ned)
 
 </div>
