@@ -11,7 +11,7 @@
 [![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-deployed-222?style=for-the-badge&logo=github)](https://djoudj-dev.github.io/le-vieu-comptoir/)
 
-[**🔗 Site live**](https://djoudj-dev.github.io/le-vieu-comptoir/) · [**📸 Captures**](#-captures-décran) · [**⚡ Performance**](#-performance)
+[**🔗 Site live**](https://j-ned.github.io/le-vieu-comptoir/) · [**📸 Captures**](#-captures-décran) · [**⚡ Performance**](#-performance)
 
 ![Le Vieux Comptoir — Hero](./screen/hero-dark.png)
 
