@@ -136,9 +136,9 @@ le-vieux-comptoir/
 ├── public/                # favicon, og-image
 ├── astro.config.mjs       # config Astro + intégration Tailwind
 ├── nginx/                 # config nginx de l'image (en-têtes de sécurité, caches)
-├── deploy/                # pile Dokploy, déclencheur, procédure de bascule
+├── deploy/                # pile Dokploy (compose.yaml) et procédure
 ├── Dockerfile             # build Astro → image nginx non root
-└── .github/workflows/     # CI/CD (image GHCR + déploiement Dokploy)
+└── .github/               # CI/CD : workflows/ (image GHCR + déploiement), scripts/ (vérifications)
 ```
 
 ---
