@@ -9,9 +9,9 @@
 [![Astro](https://img.shields.io/badge/Astro-7-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-deployed-222?style=for-the-badge&logo=github)](https://j-ned.github.io/le-vieu-comptoir/)
+[![Docker](https://img.shields.io/badge/Docker-nginx-2496ED?style=for-the-badge&logo=docker&logoColor=white)](./deploy/README.md)
 
-[**🔗 Site live**](https://j-ned.github.io/le-vieu-comptoir/) · [**📸 Captures**](#-captures-décran) · [**⚡ Performance**](#-performance)
+[**🔗 Site live**](https://vieux-comptoir.nedellec-julien.fr/) · [**📸 Captures**](#-captures-décran) · [**⚡ Performance**](#-performance)
 
 ![Le Vieux Comptoir — Hero](./screen/hero-dark.png)
 
@@ -85,7 +85,7 @@ Couleurs évoquant le bar à vin, les dorures d'un ancien comptoir, et la chaleu
 4. **Fonts auto-hébergées** — `@fontsource-variable/*`, pas de Google Fonts
 5. **Preload critique** — hero image, fonts primaires
 6. **No CLS** — dimensions explicites sur toutes les images
-7. **Static site generation** — pré-rendu au build, déployé sur GitHub Pages (CDN)
+7. **Static site generation** — pré-rendu au build, servi par nginx derrière Cloudflare
 
 ### Bundle size
 
@@ -113,8 +113,8 @@ JS exécuté         : 0 KB (!)
 ### Build & Deploy
 
 - **Astro build** → static HTML + CSS + images optimisées
-- **GitHub Actions** → pipeline CI automatique
-- **GitHub Pages** → hébergement CDN gratuit
+- **GitHub Actions** → lint, build, image Docker vérifiée, publiée sur GHCR
+- **Dokploy** sur serveur perso → nginx, derrière un tunnel Cloudflare
 
 ### Qualité
 
@@ -135,7 +135,10 @@ le-vieux-comptoir/
 │   └── styles/            # global.css + theme Tailwind
 ├── public/                # favicon, og-image
 ├── astro.config.mjs       # config Astro + intégration Tailwind
-└── .github/workflows/     # CI/CD GitHub Pages
+├── nginx/                 # config nginx de l'image (en-têtes de sécurité, caches)
+├── deploy/                # pile Dokploy, déclencheur, procédure de bascule
+├── Dockerfile             # build Astro → image nginx non root
+└── .github/workflows/     # CI/CD (image GHCR + déploiement Dokploy)
 ```
 
 ---
@@ -171,7 +174,7 @@ npm run preview
 
 ### Déploiement automatique
 
-Chaque push sur `master` déclenche le workflow GitHub Actions → build Astro → publication sur GitHub Pages.
+Chaque push sur `master` déclenche le workflow GitHub Actions → build Astro → image Docker vérifiée et publiée sur GHCR → redéploiement par Dokploy. Détails et bascule : [`deploy/README.md`](./deploy/README.md).
 
 ---
 
