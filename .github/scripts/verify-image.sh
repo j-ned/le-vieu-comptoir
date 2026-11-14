@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Garanties de l'image du site, jugées sur les réponses HTTP du conteneur : en-têtes de sécurité,
 # caches, compression, 404 des fichiers absents, utilisateur non root.
-# Usage : ci/verify-image.sh <image>
+# Usage : .github/scripts/verify-image.sh <image>
 set -euo pipefail
 image=${1:?image attendue}
 name="vieux-comptoir-verify-$$"

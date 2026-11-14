@@ -6,7 +6,6 @@ node_modules
 dist
 screen
 deploy
-ci
 **/.env
 **/.env.*
 **/*.md
